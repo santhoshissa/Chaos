@@ -17,14 +17,6 @@ pipeline {
                 }
         }
         
-                        stage('CHECKOUT_PROJECT') {
-            steps {
-                    script {
-                        sh " git checkout master"
-                        sleep 240
-                        }
-                }
-        }
                 stage('TRIGGER_KEPTN_EVALUATION_PRE_CHAOS') {
             steps {
                     script {
