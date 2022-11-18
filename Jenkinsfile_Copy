@@ -1,0 +1,21 @@
+import groovy.json.JsonSlurperClassic
+def output;
+@NonCPS
+def parseJsonToMap(String json) {
+    final slurper = new JsonSlurperClassic()
+    return new HashMap<>(slurper.parseText(json))
+}
+pipeline {
+    agent any
+    stages {
+        
+                stage('TRIGGER_KEPTN_EVALUATION_PRE_CHAOS') {
+            steps {
+                    script {
+                        sh ''
+                        }
+                }
+        }
+                           
+    }
+}
