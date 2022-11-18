@@ -17,7 +17,7 @@ pipeline {
                 }
         }
         
-                        stage('TRIGGER_KEPTN_EVALUATION_PRE_CHAOS') {
+                        stage('CHECKOUT_PROJECT') {
             steps {
                     script {
                         sh " git checkout master"
