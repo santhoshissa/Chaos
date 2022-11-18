@@ -73,7 +73,7 @@ stage('EXECUTE_CHAOS') {
             steps {
                 script {
                 CREATE_CHAOS = sh (
-                    script: 'kubectl apply -f ${Experiment}.yml',
+                    script: 'kubectl apply -f ${Experiment}_param.yaml',
                         //script: '',
                         returnStdout: true
                         ).trim()
