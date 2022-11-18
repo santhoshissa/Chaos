@@ -72,7 +72,7 @@ stage('EXECUTE_CHAOS') {
             steps {
                 script {
                 CREATE_CHAOS = sh (
-                        script: 'kubectl apply -f pod_network_latency.yml',
+                    script: 'kubectl apply -f ${Experiment}.yml',
                         //script: '',
                         returnStdout: true
                         ).trim()
