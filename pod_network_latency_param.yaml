@@ -3,13 +3,13 @@ apiVersion: litmuschaos.io/v1alpha1
 kind: ChaosEngine
 metadata:
   name: engine-nginx
-  namespace: sampleapp
+  namespace: ${namespace}
 spec:
   engineState: "active"
   annotationCheck: "false"
   appinfo:
     appns: "sampleapp"
-    applabel: "app=nginx"
+    applabel: "app=${app}"
     appkind: "deployment"
   chaosServiceAccount: pod-network-latency-sa
   experiments:
