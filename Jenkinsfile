@@ -29,7 +29,7 @@ pipeline {
                         env.keptnid = TRIGGER_KEPTN.substring(z+2,x)
                         println "keptn id-->"
                         println keptnid
-                        sleep 60
+                        //sleep 60
                         }
                 }
         }
@@ -56,8 +56,8 @@ pipeline {
                         }
                         else if(result.contains("warning"))
                         {
-                            echo "warning"
-                            currentBuild.result = 'ABORTED';
+                            //echo "warning"
+                            //currentBuild.result = 'ABORTED';
                             return;
                         }
                         else
