@@ -6,13 +6,6 @@ def parseJsonToMap(String json) {
     return new HashMap<>(slurper.parseText(json))
 }
 
-
-
-
-
-pipeline {
-    agent any
-    
     variableReplace(
     configs: [
         variablesReplaceConfig(
@@ -32,6 +25,13 @@ pipeline {
             variablesSuffix: '}#'
             )]
 )
+
+
+
+pipeline {
+    agent any
+    
+
 
     stages {
         
