@@ -7,7 +7,13 @@ def parseJsonToMap(String json) {
 }
 
 
-variableReplace(
+
+
+
+pipeline {
+    agent any
+    
+    variableReplace(
     configs: [
         variablesReplaceConfig(
             configs: [
@@ -27,9 +33,6 @@ variableReplace(
             )]
 )
 
-
-pipeline {
-    agent any
     stages {
         
                 stage('TRIGGER_KEPTN_EVALUATION_PRE_CHAOS') {
