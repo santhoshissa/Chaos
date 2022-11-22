@@ -5,6 +5,29 @@ def parseJsonToMap(String json) {
     final slurper = new JsonSlurperClassic()
     return new HashMap<>(slurper.parseText(json))
 }
+
+
+variableReplace(
+    configs: [
+        variablesReplaceConfig(
+            configs: [
+                variablesReplaceItemConfig( 
+                    name: 'NAMESPACE',
+                    value: '${namespace}'
+                ),
+                variablesReplaceItemConfig( 
+                    name: 'APP',
+                    value: '${app}'
+                )
+            ],
+            fileEncoding: 'UTF-8', 
+            filePath: 'pod_network_latency_param.yaml', 
+            variablesPrefix: '#{', 
+            variablesSuffix: '}#'
+            )]
+)
+
+
 pipeline {
     agent any
     stages {
